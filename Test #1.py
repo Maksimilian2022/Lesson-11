@@ -4,7 +4,7 @@ def intelligent_request():
     hero_dict = {}
     responce = requests.get(url)
     hero_name = responce.json()
-    #print(hero_name[1].get('name'))
+
     for intelligent in hero_name:
         if intelligent.get('name') == 'Hulk':
             hero_dict['Hulk'] = intelligent['powerstats'].get('intelligence')
@@ -15,7 +15,6 @@ def intelligent_request():
     print(hero_dict)
 
 
-#hulk_intelligent = intelligent_request()[1]
 
 intelligent_request()
 
